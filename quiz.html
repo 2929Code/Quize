@@ -1,0 +1,188 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>
+		function Generate()
+		{
+		  var Correct=0;
+		  var Wrong=0;
+                  var Score=0;
+		  for(var i = 1; i <= 3; i++)
+		  {
+		    var number="que"+i;
+		    var ele = document.getElementsByName(number); 
+		      for(var j = 0; j < ele.length; j++)
+		      {
+			if(ele[j].checked)
+			{
+				if(ele[j].value == "b") 
+		     		{
+				  Correct++;
+				} 	
+			} 
+		      }
+		  }
+
+		 var Wrong = 3-Correct;
+		 var Score=(Correct*4)-(Wrong*1);
+		 document.getElementById("ResultBox").innerHTML="<tr><td>Correct Answers are :- </td><td>"+Correct+"</td></tr> <tr><td>Wrong Answers are :- </td><td>"+Wrong+"</td></tr>  <tr><td>Score Obtained is:- </td><td> "+Score+"</td></tr><tr colspan='2' style='color:red;'><td>Note:-There is a Negative Marking of 1 mark for each wrong Question</td></tr>";
+ 		 }
+
+		
+	</script>
+   <style>
+   *{
+    margin:0px;
+    padding:0px;
+    }
+  </style>
+</head>
+<body>
+	<div class="container-fluid" style="width:100%;height:50px;background-color:gray;">
+		<div class="row" style="margin:0px;padding:0px;">
+
+			<div class="col-xs-1" style="height:100%;margin:0px;padding:0px;">
+				<button type="button" style="width:100%;height:80%;margin: 5px;padding:5px;background-color:white;" class="btn">HTML</button>
+			</div>		
+
+			<div class="col-xs-1" style="height:100%;margin:0px;padding:0px;">
+				<button type="button" class="btn" style="background-color:white;margin:5px;padding:5px;width:100%;height:80%">CSS</button>
+			</div>		
+
+			<div class="col-xs-1" style="height:100%;margin:0px;padding:0px;">
+				<button type="button" class="btn" style="background-color:white;margin:5px;padding:5px;width:100%;height:80%">JS</button>
+			</div>		
+			
+			<div class="col-xs-2">
+			</div>		
+			
+			<div class="col-xs-2" style="height:100%;margin:0px;padding:0px;">
+				<button type="button" onclick="ShowResult()" class="btn" style="background-color:white;margin:5px;padding:5px;width:100%;height:80%">RESULT</button>
+			</div>		
+			
+			<div class="col-xs-2">
+			</div>	
+	
+					
+		</div>
+	</div>
+	
+	<div class="container" style="margin:0px;padding:0px;width:100%;height:500px;">
+		<div class="row" style="margin:0px;padding:0px;height:30%;">
+			<div class="col-xs-12" style="height:100%;margin:0px;padding:0px;">
+				<table style="margin-left:2%;margin-top:2%;">
+					<th style="font-size:18px;"><bold>Ques 1: Who Invented JavaScript?</bold></th>
+					<tr>
+						<td> 
+						  <input type="radio" name="que1" value="a">
+						  <label style="font-size:13px;">a: Douglas Cracklord</label><br>
+						  
+						  <input type="radio" name="que1" value="b">
+						  <label style="font-size:13px;">b: Sheryl Sandberg</label><br>
+						  
+						  <input type="radio" name="que1" value="c">
+						  <label style="font-size:13px;">c: Brenden Fich</label><br>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row" style="margin:0px;padding:0px;height:30%;">
+			<div class="col-xs-12" style="height:100%;margin:0px;padding:0px;">
+				<table style="margin-left:2%;margin-top:1%;">
+					<th style="font-size:18px;"><bold>Ques 2: Which one of these is a JavaScript package manager?</bold></th>
+					<tr>
+						<td>
+						  <input type="radio" name="que2" value="a">
+						  <label style="font-size:13px;">a: Nodejs</label><br>
+						  
+						  <input type="radio" name="que2" value="b">
+						  <label style="font-size:13px;">b: TypeScript</label><br>
+						  
+						  <input type="radio" name="que2" value="c">
+						  <label style="font-size:13px;">c: npm</label><br>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row" style="margin:0px;padding:0px;height:30%;">
+			<div class="col-xs-12" style="height:100%;margin:0px;padding:0px;">
+				<table style="margin-left:2%;margin-top:1%;">
+					<th style="font-size:18px;"><bold>Ques 3: Which tool can you use to ensure code quality ?</bold></th>
+					<tr>
+						<td>
+						  <input type="radio" name="que3" value="a">
+						  <label style="font-size:13px;">a: Angular</label><br>
+						  
+						  <input type="radio" name="que3" value="b">
+						  <label style="font-size:13px;">b: Query</label><br>
+						  
+						  <input type="radio" name="que3" value="c">
+						  <label style="font-size:13px;">c: Requirejs</label><br>
+
+						  <input type="radio" name="que3" value="d">
+						  <label style="font-size:13px;">c: ESLint</label><br>
+						</td>
+					</tr>
+				</table>
+			</div>		
+		</div>
+		<div class="row" style="margin:0px;padding:0px;height:8%;">
+			<div class="col-xs-12" style="height:100%;margin:0px;padding:0px;">
+				<button type="button" class="btn btn-primary" onclick="Generate()" style="margin-left:2%;height:100%;">Submit Quize</button>
+			</div>
+		</div>		
+		
+	</div>
+
+	<div class="container-fluid" style="width:100%;height:90px;background-color:white;margin:0px;padding:0px;">	
+		<div class="row" style="margin:0px;padding:0px;">
+			<div class="col-xs-12" style="height:100%;margin:0px;padding:0px;" >
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid" style="width:100%;height:50px;background-color:grey;">	
+		<div class="row" style="margin:0px;padding:0px;">
+			<div class="col-xs-1" style="height:100%;margin:0px;padding:0px;">
+				<button type="button" class="btn btn-primary" style="height:100%;background-color: black;">Resourses</button>
+			</div>
+			<div class="col-xs-4" style="height:100%;margin:0px;padding:0px;">
+			</div>
+			<div class="col-xs-2" style="height:100%;margin:0px;padding:0px;">
+				<div class="row" style="margin:0px;padding:0px;">
+					<div class="col-xs-4" style="height:100%;margin:0px;padding:0px;">
+						<button type="button" class="button" style="height:80%;width:100%;background-color: black;">0.5x</button>
+					</div>
+		
+					<div class="col-xs-4" style="height:100%;margin:0px;padding:0px;">
+						<button type="button" class="button" style="height:80%;width:100%;background-color: black;">1x</button>
+					</div>
+		
+					<div class="col-xs-4" style="height:100%;margin:0px;padding:0px;">
+						<button type="button" class="button" style="height:80%;width:100%;background-color: black;">1.5x</button>
+					</div>		
+
+				</div>
+			</div>
+			<div class="col-xs-4" style="height:100%;margin:0px;padding:0px;">
+			</div>
+			<div class="col-xs-1" style="height:100%;margin:0px;padding:0px;">
+				<button type="button" class="btn btn-primary" style="height:100%;background-color: black;">Rerun</button>
+			</div>
+		</div>		
+		
+	</div>
+
+</body>
+
+
+
+</html>
